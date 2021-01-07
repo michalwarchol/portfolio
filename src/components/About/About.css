@@ -1,0 +1,16 @@
+.about {
+  color: #3A405A;
+  margin-top: 40px;
+}
+.about .title {
+  margin: 20px 0;
+}
+.about .title h1 {
+  font-weight: normal;
+}
+.about .skills {
+  margin: 20px 0;
+}
+.about .skills h3 {
+  text-align: center;
+}
