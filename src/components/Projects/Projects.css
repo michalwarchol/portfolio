@@ -1,0 +1,12 @@
+.projects {
+  margin-top: 20px;
+  color: #3A405A;
+  font-family: 'Nunito', sans-serif;
+}
+.projects .title {
+  padding-top: 40px;
+}
+.projects .projects-inner {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}

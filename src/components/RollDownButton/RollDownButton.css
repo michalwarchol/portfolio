@@ -1,0 +1,13 @@
+.rollDownButton {
+  border: 2px solid #3A405A;
+  border-radius: 0 0 25px 25px;
+  width: 250px;
+  cursor: pointer;
+}
+.rollDownButton:active {
+  background-color: #bec2d5;
+}
+.rollDownButton span {
+  text-align: center;
+  padding: 10px;
+}

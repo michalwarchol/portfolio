@@ -1,0 +1,53 @@
+//variables
+@import "../../App.less";
+
+//mixins
+.text{
+    h1{
+        font-size: 68px;
+    }
+    h3{
+        font-size: 38px;
+    }
+    @media screen and (max-width: 767px) {
+        height: 203px;
+        width: 100%;
+    }
+    @media screen and (max-width: 992px) {
+        h1{
+            font-size: 48px;
+        }
+        h3{
+            font-size: 22px;
+        }
+    }
+}
+
+//styles
+.banner{
+    @media screen and (max-width: 767px){
+        background-image: url("../../static/img/banner-background-smaller.png");
+        height: 406px;
+    }
+
+    background-image: url("../../static/img/banner-background.png");
+    background-size: 100% 100%;
+    height: 810px;
+    font-family: 'Nunito', sans-serif;
+    .leftside-title{
+        .text();
+        color: @color1;
+    }
+    .rightside-title{
+        .text();
+        h1{
+            text-align: end;
+        }
+        @media screen and (max-width: 767px){
+            h1{
+                text-align: center;
+            }
+        }
+        color: white;
+    }
+}

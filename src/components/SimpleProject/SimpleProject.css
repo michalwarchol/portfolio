@@ -1,0 +1,11 @@
+.simpleProject {
+  margin: 20px 0;
+}
+.simpleProject .img img {
+  width: 100%;
+  height: 100%;
+}
+.simpleProject .info .project-title {
+  font-weight: bold;
+  font-size: 28px;
+}

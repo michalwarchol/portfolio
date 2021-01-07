@@ -1,0 +1,15 @@
+@import "../../App.less";
+
+.rollDownButton{
+    border: 2px solid @color1;
+    border-radius: 0 0 25px 25px;
+    width: 250px;
+    cursor: pointer;
+    &:active{
+        background-color: lighten(@color1, 50%);
+    }
+    span{
+        text-align: center;
+        padding: 10px;
+    }
+}
