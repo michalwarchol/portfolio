@@ -1,16 +1,17 @@
+@import "../../global";
 .glassPanel {
+    color: $textColor;
     width: 280px;
     height: 140px;
     padding: 30px;
     margin: 10px;
     margin-top: 0;
     border-radius: 16px;
-    box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     cursor: pointer;
     background-color: rgba(white, 0.1);
     backdrop-filter: blur(40px);
-    border: 2px solid transparent;
     background-clip: padding-box;
     animation-name: appear;
     animation-duration: 0.5s;
@@ -19,11 +20,6 @@
     position: relative;
     h1 {
         text-align: center;
-    }
-    &:hover {
-        .iconContainer {
-            transform: rotate(90deg);
-        }
     }
     @media screen and (max-width: 992px) {
         width: 80px;
