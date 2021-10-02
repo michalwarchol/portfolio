@@ -5,22 +5,21 @@ import VanillaTilt from "vanilla-tilt";
 
 interface Props {
   animationDelay: string;
-  MyIcon: IconType;
+  MyIcon?: IconType;
 }
 
 const GlassPanel: React.FC<Props> = ({ animationDelay, MyIcon, children }) => {
-
   const glass = useRef<HTMLDivElement>(null);
 
-  useEffect(()=>{
-    if(glass.current){
+  useEffect(() => {
+    if (glass.current) {
       VanillaTilt.init(glass.current, {
         "max-glare": 0.8,
         glare: true,
-      })
+      });
     }
-  }, [])
-  
+  }, []);
+
   return (
     <div
       ref={glass}
@@ -28,9 +27,11 @@ const GlassPanel: React.FC<Props> = ({ animationDelay, MyIcon, children }) => {
       style={{ animationDelay: animationDelay }}
     >
       {children}
-      <div className={styles.iconContainer}>
-        <MyIcon />
-      </div>
+      {MyIcon && (
+        <div className={styles.iconContainer}>
+          <MyIcon />
+        </div>
+      )}
     </div>
   );
 };
