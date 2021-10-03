@@ -1,0 +1,50 @@
+@import "../../global";
+
+.projects {
+  max-width: 1400px;
+  color: $textColor;
+  position: relative;
+  overflow: hidden;
+  padding: 40px;
+  margin: auto;
+
+  .glass {
+    width: 100%;
+    background-color: rgba(black, 0.3);
+    backdrop-filter: blur(40px);
+    background-clip: padding-box;
+    border-radius: 20px;
+    padding: 20px;
+
+    .navbar {
+      margin: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .logo {
+        font-size: 30px;
+        font-weight: 700;
+        color: $textColor;
+      }
+
+      .buttons {
+        display: flex;
+      }
+
+      .navbarButton {
+        color: $textColor;
+        padding: 10px 20px;
+        margin-right: 20px;
+        font-size: 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: background-color ease-in-out 0.1s;
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.2);
+        }
+      }
+    }
+  }
+}
