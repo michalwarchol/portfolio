@@ -12,16 +12,11 @@
   .container {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
     width: 100%;
     @media screen and (max-width: 1400px) {
       flex-direction: column;
     }
-  }
-
-  .containerInner {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
   }
 
   .description {
@@ -39,6 +34,8 @@
       height: 100%;
 
       .title {
+        position: relative;
+        z-index: 10;
         font-size: 34px;
         font-family: "DM Sans";
         span {
@@ -46,6 +43,8 @@
         }
       }
       .titleText {
+        position: relative;
+        z-index: 10;
         font-size: 20px;
         border-left: 2px solid white;
         border-right: 2px solid white;
@@ -57,6 +56,7 @@
 
       .bgIcon {
         position: absolute;
+        z-index: 5;
         top: 0;
         left: 0;
         right: 0;
@@ -105,5 +105,21 @@
         height: 150px;
       }
     }
+  }
+
+  .article {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    .list {
+      p {
+          font-size: 20px;
+          span {
+              margin-top: 4px;
+              color: $yellow;
+              font-size: 20px;
+          }
+      }
+  }
   }
 }

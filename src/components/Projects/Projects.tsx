@@ -12,7 +12,34 @@ const Projects: React.FC = () => {
           <div className={styles.logo}>Projects</div>
         </div>
         <Divider />
-        <Project title="Clonebook" image="/clonebook.png" BgIcon={FaThumbsUp} />
+        <Project
+          title="Clonebook"
+          image="/clonebook.png"
+          BgIcon={FaThumbsUp}
+          featuresStack={[
+            "posts",
+            "friends",
+            "reactions",
+            "comments",
+            "stories",
+          ]}
+          frontendStack={[
+            "React",
+            "Next.js",
+            "TypeScript",
+            "Chakra UI",
+            "Urql",
+          ]}
+          backendStack={[
+            "Node.js",
+            "Express",
+            "AWS S3",
+            "typeorm",
+            "type-graphql",
+            "Apollo Server",
+            "PostgreSQL"
+          ]}
+        />
       </div>
     </div>
   );

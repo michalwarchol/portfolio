@@ -1,0 +1,13 @@
+@import "../../global";
+.article {
+    width: 100%;
+    .innerArticle {
+        padding: 20px;
+        .title {
+            span {
+                font-size: 26px;
+                border-bottom: 2px solid $yellow;
+            }
+        }
+    }
+}

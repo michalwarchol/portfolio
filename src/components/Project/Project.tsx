@@ -2,14 +2,19 @@ import React, { useEffect, useState } from "react";
 import styles from "./Project.module.scss";
 import Image from "next/image";
 import { IconType } from "react-icons";
+import List from "../List/List";
+import {BsDot} from 'react-icons/bs';
 
 interface Props {
   title: string;
   image: string;
   BgIcon: IconType;
+  featuresStack?: string[];
+  frontendStack?: string[];
+  backendStack?: string[];
 }
 
-const Project: React.FC<Props> = ({ title, image, BgIcon }) => {
+const Project: React.FC<Props> = ({ title, image, BgIcon, featuresStack, frontendStack, backendStack }) => {
   const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
@@ -52,6 +57,36 @@ const Project: React.FC<Props> = ({ title, image, BgIcon }) => {
               <Image src={image} width={width} height={height} />
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className={styles.container}>
+        <div className={styles.article}>
+          <List title="Features">
+            {featuresStack?.map((elem, index)=>(
+              <div key={index} className={styles.list}>
+                <p><span><BsDot /></span>{elem}</p>
+              </div>
+            ))}
+          </List>
+        </div>
+        <div className={styles.article}>
+          <List title="Frontend">
+            {frontendStack?.map((elem, index)=>(
+              <div key={index} className={styles.list}>
+                <p><span><BsDot /></span>{elem}</p>
+              </div>
+            ))}
+          </List>
+        </div>
+        <div className={styles.article}>
+          <List title="Backend">
+            {backendStack?.map((elem, index)=>(
+              <div key={index} className={styles.list}>
+                <p><span><BsDot /></span>{elem}</p>
+              </div>
+            ))}
+          </List>
         </div>
       </div>
     </div>
