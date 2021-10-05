@@ -3,7 +3,8 @@ import styles from "./Project.module.scss";
 import Image from "next/image";
 import { IconType } from "react-icons";
 import List from "../List/List";
-import {BsDot} from 'react-icons/bs';
+import { BsDot } from "react-icons/bs";
+import { AiFillFire, AiFillGithub } from "react-icons/ai";
 
 interface Props {
   title: string;
@@ -14,7 +15,14 @@ interface Props {
   backendStack?: string[];
 }
 
-const Project: React.FC<Props> = ({ title, image, BgIcon, featuresStack, frontendStack, backendStack }) => {
+const Project: React.FC<Props> = ({
+  title,
+  image,
+  BgIcon,
+  featuresStack,
+  frontendStack,
+  backendStack,
+}) => {
   const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
@@ -40,10 +48,11 @@ const Project: React.FC<Props> = ({ title, image, BgIcon, featuresStack, fronten
             </div>
             <div className={styles.titleText}>
               <p>
-                Clonebook is a copy of facebook. I mean, not identical, but it has
-                close design and lots of features like creating posts or adding friends.
-                By making this project, I learned how to use GraphQL with URQL client,
-                how to manage PostgreSQL using typeorm and how to upload images to AWS S3 bucket.
+                Clonebook is a copy of facebook. I mean, not identical, but it
+                has close design and lots of features like creating posts or
+                adding friends. By making this project, I learned how to use
+                GraphQL with URQL client, how to manage PostgreSQL using typeorm
+                and how to upload images to AWS S3 bucket.
               </p>
             </div>
             <div className={styles.bgIcon}>
@@ -55,6 +64,14 @@ const Project: React.FC<Props> = ({ title, image, BgIcon, featuresStack, fronten
           <div className={styles.imageBox}>
             <div className={styles.innerBox}>
               <Image src={image} width={width} height={height} />
+              <div className={styles.linkButtons}>
+                <div className={styles.linkButton}>
+                  <AiFillFire />
+                </div>
+                <div className={styles.linkButton}>
+                  <AiFillGithub />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -63,27 +80,42 @@ const Project: React.FC<Props> = ({ title, image, BgIcon, featuresStack, fronten
       <div className={styles.container}>
         <div className={styles.article}>
           <List title="Features">
-            {featuresStack?.map((elem, index)=>(
+            {featuresStack?.map((elem, index) => (
               <div key={index} className={styles.list}>
-                <p><span><BsDot /></span>{elem}</p>
+                <p>
+                  <span>
+                    <BsDot />
+                  </span>
+                  {elem}
+                </p>
               </div>
             ))}
           </List>
         </div>
         <div className={styles.article}>
           <List title="Frontend">
-            {frontendStack?.map((elem, index)=>(
+            {frontendStack?.map((elem, index) => (
               <div key={index} className={styles.list}>
-                <p><span><BsDot /></span>{elem}</p>
+                <p>
+                  <span>
+                    <BsDot />
+                  </span>
+                  {elem}
+                </p>
               </div>
             ))}
           </List>
         </div>
         <div className={styles.article}>
           <List title="Backend">
-            {backendStack?.map((elem, index)=>(
+            {backendStack?.map((elem, index) => (
               <div key={index} className={styles.list}>
-                <p><span><BsDot /></span>{elem}</p>
+                <p>
+                  <span>
+                    <BsDot />
+                  </span>
+                  {elem}
+                </p>
               </div>
             ))}
           </List>
