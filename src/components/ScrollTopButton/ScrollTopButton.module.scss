@@ -1,0 +1,21 @@
+@import "../../global";
+
+.scrollTopButton {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(black, 0.3);
+  backdrop-filter: blur(40px);
+  color: $textColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  cursor: pointer;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
