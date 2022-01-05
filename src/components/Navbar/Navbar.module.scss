@@ -1,0 +1,76 @@
+@import "../../global";
+
+.navbar {
+    margin: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    .logo {
+      font-size: 30px;
+      font-weight: 700;
+      color: $textColor;
+      position: relative;
+      transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    }
+
+    .menu {
+      color: $textColor;
+      font-size: 28px;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      position: absolute;
+      right: 96%;
+      transition: right 0.4s ease-in-out;
+      @media screen and (min-width: 768px) {
+        display: none;
+      }
+
+      .menuIndicator {
+        width: 40px;
+        height: 40px;
+        padding: 6px;
+        display: flex;
+        align-items: center;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.4s ease-in-out;
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.2);
+        }
+      }
+    }
+    .menuButtons {
+      width: 265px;
+      display: flex;
+      position: absolute;
+      right: 0;
+      transition: all 0.4s ease-in-out;
+      @media screen and (min-width: 768px) {
+        display: none;
+      }
+  }
+
+    .buttons {
+      display: flex;
+      @media screen and (max-width: 767px) {
+        display: none;
+      }
+    }
+
+    .navbarButton {
+      color: $textColor;
+      padding: 10px 20px;
+      margin-right: 20px;
+      font-size: 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background-color ease-in-out 0.1s;
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+  }

@@ -5,6 +5,8 @@ import { AiFillGithub } from "react-icons/ai";
 import { FaGrinStars } from "react-icons/fa";
 import VanillaTilt from "vanilla-tilt";
 import Divider from "../Divider/Divider";
+import { Link } from "react-scroll";
+import Navbar from "../Navbar/Navbar";
 
 const Header: React.FC = () => {
   const exploreRef = useRef<HTMLDivElement>(null);
@@ -12,24 +14,18 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     if (exploreRef.current && githubRef.current) {
+      exploreRef.current.scrollIntoView();
       VanillaTilt.init([exploreRef.current, githubRef.current], {
         "max-glare": 0.8,
         glare: true,
       });
     }
-  }, []);
+  }, [exploreRef, githubRef]);
 
   return (
     <header className={styles.header}>
       <div className={styles.glass}>
-        <div className={styles.navbar}>
-          <div className={styles.logo}>Michał Warchoł</div>
-          <div className={styles.buttons}>
-            <div className={styles.navbarButton}>Projects</div>
-            <div className={styles.navbarButton}>TechStack</div>
-            <div className={styles.navbarButton}>About Me</div>
-          </div>
-        </div>
+        <Navbar />
         <Divider />
         <div className={styles.content}>
           <div className={styles.text}>
@@ -37,13 +33,21 @@ const Header: React.FC = () => {
             <p className={styles.whiteText}>Great code</p>
             <p className={styles.whiteText}>from a great dev</p>
             <div className={styles.linkButtons}>
-              <div className={styles.exploreButton} ref={exploreRef}>
-                <span>Explore</span>
-                <div className={styles.arrow}>
-                  <MdKeyboardArrowRight />
+              <Link to="projects" smooth={true}>
+                <div className={styles.exploreButton} ref={exploreRef}>
+                  <span>Explore</span>
+                  <div className={styles.arrow}>
+                    <MdKeyboardArrowRight />
+                  </div>
                 </div>
-              </div>
-              <div className={styles.githubButton} ref={githubRef}>
+              </Link>
+              <div
+                className={styles.githubButton}
+                ref={githubRef}
+                onClick={() =>
+                  window.location.assign("https://github.com/michalwarchol")
+                }
+              >
                 <span>Github</span>
                 <div>
                   <div className={styles.arrow}>
@@ -54,7 +58,7 @@ const Header: React.FC = () => {
             </div>
           </div>
           <div className={styles.icon}>
-              <FaGrinStars />
+            <FaGrinStars />
           </div>
         </div>
       </div>

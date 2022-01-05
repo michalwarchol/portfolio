@@ -17,127 +17,95 @@
     background-clip: padding-box;
     border-radius: 20px;
     padding: 20px;
-    
-    .navbar {
-        margin: 10px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        .logo {
-            font-size: 30px;
-            font-weight: 700;
-            color: $textColor;
-        }
-
-        .buttons {
-            display: flex;
-
-        }
-
-        .navbarButton {
-            color: $textColor;
-            padding: 10px 20px;
-            margin-right: 20px;
-            font-size: 20px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: background-color ease-in-out 0.1s;
-            &:hover {
-                background-color: rgba(255, 255, 255, 0.2);
-            }
-        }
-    }
-
 
     .content {
-        margin: 10px 20px;
+      margin: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      .text {
+        margin-top: 76px;
+        width: 100%;
+
+        .colorText {
+          color: $yellow;
+          font-size: 24px;
+          font-weight: 500;
+          margin: 0;
+          font-family: "DM Sans", sans-serif;
+        }
+        .whiteText {
+          margin: 0;
+          color: $textColor;
+          font-size: 72px;
+          font-family: "Staatliches", cursive;
+        }
+
+        .linkButtons {
+          margin-top: 20px;
+          display: flex;
+        }
+
+        .exploreButton {
+          background-color: $yellow;
+          width: 160px;
+          padding: 10px 20px;
+          border-radius: 20px;
+          font-size: 20px;
+          color: black;
+          font-weight: 500;
+          font-family: "DM Sans", sans-serif;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+          transition: background-color ease-in-out 0.1s;
+          margin-right: 10px;
+          overflow: hidden;
+
+          .arrow {
+            font-size: 34px;
+            height: 34px;
+          }
+        }
+
+        .githubButton {
+          background-color: transparent;
+          border: 2px solid $yellow;
+          width: 160px;
+          padding: 10px 20px;
+          border-radius: 20px;
+          font-size: 20px;
+          color: black;
+          font-weight: 500;
+          font-family: "DM Sans", sans-serif;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+          transition: background-color ease-in-out 0.1s;
+          overflow: hidden;
+          .arrow {
+            font-size: 34px;
+            height: 34px;
+          }
+        }
+      }
+
+      .icon {
+        width: 46%;
         display: flex;
-        justify-content: space-between;
-        .text {
-            margin-top: 76px;
-            width: 46%;
+        justify-content: center;
+        align-items: center;
+        font-size: 280px;
+        color: rgba(255, 255, 255, 0.2);
+        position: absolute;
+        right: 20px;
 
-            .colorText {
-                color: $yellow;
-                font-size: 24px;
-                font-weight: 500;
-                margin: 0;
-                font-family: 'DM Sans', sans-serif;
-            }
-            .whiteText {
-                margin: 0;
-                color: $textColor;
-                font-size: 72px;
-                font-family: 'Staatliches', cursive;
-            }
-
-            .linkButtons {
-                margin-top: 20px;
-                display: flex;
-            }
-
-            .exploreButton {
-                background-color: $yellow;
-                width: 160px;
-                padding: 10px 20px;
-                border-radius: 20px;
-                font-size: 20px;
-                color: black;
-                font-weight: 500;
-                font-family: 'DM Sans', sans-serif;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                cursor: pointer;
-                transition: background-color ease-in-out 0.1s;
-                margin-right: 10px;
-                overflow: hidden;
-
-                .arrow {
-                    font-size: 34px;
-                    height: 34px;
-                }
-            }
-
-            .githubButton {
-                background-color: transparent;
-                border: 2px solid $yellow;
-                width: 160px;
-                padding: 10px 20px;
-                border-radius: 20px;
-                font-size: 20px;
-                color: black;
-                font-weight: 500;
-                font-family: 'DM Sans', sans-serif;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                cursor: pointer;
-                transition: background-color ease-in-out 0.1s;
-                overflow: hidden;
-                .arrow {
-                    font-size: 34px;
-                    height: 34px;
-                }
-            }
+        svg {
+          border-radius: 50%;
+          transform: rotate(15deg);
         }
-
-        .icon {
-            width: 46%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 280px;
-            color: rgba(255, 255, 255, 0.2);
-
-            svg {
-                border-radius: 50%;
-                transform: rotate(15deg);
-            }
-            
-        }
+      }
     }
   }
 }
