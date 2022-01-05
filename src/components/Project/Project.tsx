@@ -8,8 +8,11 @@ import { AiFillFire, AiFillGithub } from "react-icons/ai";
 
 interface Props {
   title: string;
+  text: string;
   image: string;
   BgIcon: IconType;
+  link: string;
+  github: string;
   featuresStack?: string[];
   frontendStack?: string[];
   backendStack?: string[];
@@ -17,14 +20,16 @@ interface Props {
 
 const Project: React.FC<Props> = ({
   title,
+  text,
   image,
   BgIcon,
+  link,
+  github,
   featuresStack,
   frontendStack,
   backendStack,
 }) => {
   const [windowWidth, setWindowWidth] = useState(0);
-
   useEffect(() => {
     setWindowWidth(window.innerWidth);
     window.addEventListener("resize", () => {
@@ -47,13 +52,7 @@ const Project: React.FC<Props> = ({
               <span>{title}</span>
             </div>
             <div className={styles.titleText}>
-              <p>
-                Clonebook is a copy of facebook. I mean, not identical, but it
-                has close design and lots of features like creating posts or
-                adding friends. By making this project, I learned how to use
-                GraphQL with URQL client, how to manage PostgreSQL using typeorm
-                and how to upload images to AWS S3 bucket.
-              </p>
+              <p>{text}</p>
             </div>
             <div className={styles.bgIcon}>
               <BgIcon />
@@ -65,10 +64,16 @@ const Project: React.FC<Props> = ({
             <div className={styles.innerBox}>
               <Image src={image} width={width} height={height} />
               <div className={styles.linkButtons}>
-                <div className={styles.linkButton}>
+                <div
+                  className={styles.linkButton}
+                  onClick={() => window.location.assign(link)}
+                >
                   <AiFillFire />
                 </div>
-                <div className={styles.linkButton}>
+                <div
+                  className={styles.linkButton}
+                  onClick={() => window.location.assign(github)}
+                >
                   <AiFillGithub />
                 </div>
               </div>
@@ -77,12 +82,12 @@ const Project: React.FC<Props> = ({
         </div>
       </div>
 
-      <div className={styles.container}>
+      <div className={styles.containerArticle}>
         <div className={styles.article}>
           <List title="Features">
             {featuresStack?.map((elem, index) => (
               <div key={index} className={styles.list}>
-                <p>
+                <p className={styles.elem}>
                   <span>
                     <BsDot />
                   </span>

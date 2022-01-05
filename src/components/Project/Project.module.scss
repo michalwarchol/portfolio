@@ -18,6 +18,16 @@
       flex-direction: column;
     }
   }
+  
+  .containerArticle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    @media screen and (max-width: 1000px) {
+      flex-direction: column;
+    }
+  }
 
   .description {
     width: 34%;
@@ -72,6 +82,7 @@
   .graphics {
     width: 66%;
     position: relative;
+    z-index: 10;
     @media screen and (max-width: 1400px) {
       width: 100%;
     }
@@ -89,6 +100,11 @@
     border-radius: 10px;
     justify-content: center;
     align-items: center;
+    @media screen and (max-width: 1400px) {
+      width: 580px;
+      height: 300px;
+      margin: 0 auto;
+    }
     @media screen and (max-width: 768px) {
       width: 340px;
       height: 160px;
@@ -96,11 +112,13 @@
     }
 
     .innerBox {
-      width: 740px;
-      height: 380px;
       border-radius: 10px;
       overflow: hidden;
       position: relative;
+      @media screen and (max-width: 1400px) {
+        width: 560px;
+        height: 280px;
+      }
       @media screen and (max-width: 768px) {
         width: 320px;
         height: 150px;
@@ -119,10 +137,10 @@
         font-size: 80px;
         background-color: transparent;
         transition: background-color 0.2s ease-in-out;
-        &:hover{
+        &:hover {
           background-color: rgba(0, 0, 0, 0.5);
-        } 
-        &:hover > .linkButton{
+        }
+        &:hover > .linkButton {
           opacity: 1;
           margin-top: 0;
         }
@@ -134,7 +152,7 @@
           cursor: pointer;
           color: $yellow;
 
-          &:hover{
+          &:hover {
             transform: scale(1.2);
           }
         }
@@ -144,17 +162,22 @@
 
   .article {
     width: 30%;
+    @media screen and (max-width: 1000px) {
+      width: 100%;
+    }
     display: flex;
     justify-content: center;
     .list {
       p {
+        font-size: 20px;
+        width: 100%;
+        display: flex;
+        span {
+          margin-top: 4px;
+          color: $yellow;
           font-size: 20px;
-          span {
-              margin-top: 4px;
-              color: $yellow;
-              font-size: 20px;
-          }
+        }
       }
-  }
+    }
   }
 }
