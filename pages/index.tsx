@@ -3,6 +3,8 @@ import Head from "next/head";
 import styles from "./index.module.scss";
 import Header from "../src/components/Header/Header";
 import Projects from "../src/components/Projects/Projects";
+import HireMe from "../src/components/HireMe/HireMe";
+import ScrollTopButton from "../src/components/ScrollTopButton/ScrollTopButton";
 
 const Home: NextPage = () => {
   return (
@@ -16,6 +18,8 @@ const Home: NextPage = () => {
       </Head>
       <Header />
       <Projects />
+      <HireMe />
+      <ScrollTopButton />
     </div>
   );
 };
