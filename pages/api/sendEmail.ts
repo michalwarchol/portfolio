@@ -21,6 +21,7 @@ const handler = async (req: VercelRequest, res: VercelResponse) => {
     subject: "Recrutation",
     html: `
     <p>name: ${body.name}</p>
+    <p>company: ${body.company}</p>
     <p>email: ${body.email}</p>
     <p>message: ${body.message}</p>
     `,

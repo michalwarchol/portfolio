@@ -12,6 +12,7 @@ const HireMe: React.FC = () => {
 
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
+  const [company, setCompany] = useState<string>("");
   const [message, setMessage] = useState<string>("");
 
   const [mailSent, setMailSent] = useState<boolean>(false);
@@ -40,7 +41,7 @@ const HireMe: React.FC = () => {
 
     const response = await fetch("/api/sendEmail", {
       method: "POST",
-      body: JSON.stringify({ name, email, message }),
+      body: JSON.stringify({ name, company, email, message }),
     });
     const res = await response.json();
     if (res.status) {
@@ -80,6 +81,16 @@ const HireMe: React.FC = () => {
                 value={name}
                 onChange={(e: React.FormEvent<HTMLInputElement>) => {
                   setName(e.currentTarget.value);
+                }}
+              />
+              <Input
+                name="company"
+                type="text"
+                placeholder="company"
+                required
+                value={company}
+                onChange={(e: React.FormEvent<HTMLInputElement>) => {
+                  setCompany(e.currentTarget.value);
                 }}
               />
               <Input
