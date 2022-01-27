@@ -18,7 +18,7 @@
       flex-direction: column;
     }
   }
-  
+
   .containerArticle {
     display: flex;
     flex-direction: row;
@@ -62,6 +62,12 @@
           text-align: justify;
           padding: 10px;
         }
+      }
+
+      .linkButtons {
+        position: relative;
+        z-index: 10;
+        display: flex;
       }
 
       .bgIcon {

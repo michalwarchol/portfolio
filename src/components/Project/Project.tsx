@@ -5,6 +5,7 @@ import { IconType } from "react-icons";
 import List from "../List/List";
 import { BsDot } from "react-icons/bs";
 import { AiFillFire, AiFillGithub } from "react-icons/ai";
+import Button from "../Button/Button";
 
 interface Props {
   title: string;
@@ -53,6 +54,20 @@ const Project: React.FC<Props> = ({
             </div>
             <div className={styles.titleText}>
               <p>{text}</p>
+            </div>
+            <div className={styles.linkButtons}>
+              <Button
+                Icon={AiFillFire}
+                text="Live"
+                type="fill"
+                onClick={() => window.location.assign(link)}
+              />
+              <Button
+                Icon={AiFillGithub}
+                text="Repo"
+                type="outline"
+                onClick={() => window.location.assign(github)}
+              />
             </div>
             <div className={styles.bgIcon}>
               <BgIcon />
