@@ -16,7 +16,7 @@ const Header: React.FC = () => {
         <Divider />
         <div className={styles.content}>
           <div className={styles.text}>
-            <p className={styles.colorText}>All You're Gonna See Here Is</p>
+            <p className={styles.colorText}>All You&apos;re Gonna See Here Is</p>
             <p className={styles.whiteText}>Great code</p>
             <p className={styles.whiteText}>from a great dev</p>
             <div className={styles.linkButtons}>
