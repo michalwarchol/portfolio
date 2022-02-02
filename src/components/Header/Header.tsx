@@ -20,7 +20,7 @@ const Header: React.FC = () => {
             <p className={styles.whiteText}>Great code</p>
             <p className={styles.whiteText}>from a great dev</p>
             <div className={styles.linkButtons}>
-              <Link to="projects" smooth={true}>
+              <Link to="projects" smooth={true} className={styles.link}>
                 <Button
                   Icon={MdKeyboardArrowRight}
                   text="Explore"
